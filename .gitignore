@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Assets/Adventure Master Content
+/Assets/Prefabs
+/Assets/Scenes
+/Library
+/ProjectSettings
+/Temp
+/UserSettings
+/.vsconfig
+/AdventureMobile.sln
+/Assembly-CSharp.csproj

@@ -1,10 +1,7 @@
-﻿namespace CodeBase.Infrastructure.StateMachine
+﻿namespace CodeBase.Infrastructure.StateMachines
 {
-    public partial class StateMachine
+    public interface IExitableState : IState
     {
-        public interface IExitableState : IState
-        {
-            void Exit();
-        }
+        void Exit();
     }
 }

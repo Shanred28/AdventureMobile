@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace CodeBase.Infrastructure.StateMachine
+namespace CodeBase.Infrastructure.StateMachines
 {
-    public partial class StateMachine
+    public abstract  class StateMachine
     {
         private Dictionary<Type, object> _states;
         private object _currentState;
+        public object CurrentState => _currentState;
 
         public StateMachine()
         {

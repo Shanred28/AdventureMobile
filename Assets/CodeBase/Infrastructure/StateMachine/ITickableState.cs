@@ -1,10 +1,7 @@
-﻿namespace CodeBase.Infrastructure.StateMachine
+﻿namespace CodeBase.Infrastructure.StateMachines
 {
-    public partial class StateMachine
+    public interface ITickableState : IState
     {
-        public interface ITickableState : IState
-        {
-            void Tick();
-        }
+        void Tick();
     }
 }

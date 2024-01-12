@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class AsseetPath
 {
     public const string HeroPath = "Prefabs/Hero";

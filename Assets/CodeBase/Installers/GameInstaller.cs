@@ -1,5 +1,6 @@
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.EntyPoint;
+using CodeBase.Infrastructure.Service.GameStates;
 using CodeBase.Infrastructure.ServiceLocator;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace CodeBase.Infrastructure
 
         private void RegisterInputServices()
         {
-           
+            AllServices.SrvContainer.RegisterSingle<IGameStateSwither>(new GameStateMachine());
             AllServices.SrvContainer.RegisterSingle<IAssetProvider>(new AssetProvider());
             AllServices.SrvContainer.RegisterSingle<IInputServices>(new InputServices());
         }

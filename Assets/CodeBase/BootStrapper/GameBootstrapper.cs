@@ -1,6 +1,6 @@
 using CodeBase.Infrastructure.EntyPoint;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+using CodeBase.Infrastructure.Service.GameStates;
+using CodeBase.Infrastructure.ServiceLocator;
 
 namespace CodeBase.Infrastructure
 {
@@ -8,14 +8,11 @@ namespace CodeBase.Infrastructure
     {
         public override void Bootstrap()
         {
-            Debug.Log("GLOBAL: Init");
+            IGameStateSwither gameStateSwither = AllServices.SrvContainer.Single<IGameStateSwither>();
+            gameStateSwither.AddState(new GameBootstrapState(gameStateSwither));
+            gameStateSwither.AddState(new LoadNextLevelState(AllServices.SrvContainer.Single<ISceneLoader>()));
 
-            DontDestroyOnLoad(gameObject);
-
-            Application.targetFrameRate = Screen.currentResolution.refreshRate;
-
-            //TODO
-            SceneManager.LoadScene("Level_1");
+            gameStateSwither.EnterState<GameBootstrapState>();
         }
     }
 }

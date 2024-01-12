@@ -1,10 +1,7 @@
-﻿namespace CodeBase.Infrastructure.StateMachine
+﻿namespace CodeBase.Infrastructure.StateMachines
 {
-    public partial class StateMachine
+    public interface IEnterableState : IState
     {
-        public interface IEnterableState : IState
-        {
-            void Enter();
-        }
+        void Enter();
     }
 }
